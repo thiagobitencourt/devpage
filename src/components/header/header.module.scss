@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title {
+    font-size: 30px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.menu {
+    align-self: flex-end;
+
+    ul > li {
+        display: inline;
+        margin-right: 20px;
+    }
+}

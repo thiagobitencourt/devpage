@@ -1,21 +1,46 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
+import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
+import blogStyles from './index.module.scss';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              title,
+              date
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Layout>
+      <SEO title="Blog" />
+      <ol className={ blogStyles.posts }>
+        {data.allMarkdownRemark.edges.map(edge => {
+          return (
+            <li className={ blogStyles.post }>
+              <Link to={`/blog/${edge.node.fields.slug}`}>
+                <h2>{edge.node.frontmatter.title}</h2>
+                <p>{edge.node.frontmatter.date}</p>
+              </Link>
+            </li>
+          )
+        })}
+      </ol>
+    </Layout>
+  )
+}
 
 export default IndexPage
