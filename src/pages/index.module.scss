@@ -1,17 +1,22 @@
+@import 'src/styles/theme';
+
 .posts {
     list-style-type: none;
     margin: 0;
 }
 
 .post {
-    a {
-        color: #000000;
-        display: block;
-        text-decoration: none;
-    }
+    padding: 15px 0;
 
-    a:hover {
-        text-decoration: underline;
+    a {
+        color: $primary-text-color;
+        display: block;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom: 1px solid $primary-color;
+        }
     }
 
     h2 {

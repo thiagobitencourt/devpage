@@ -1,9 +1,10 @@
 ---
 title: "Olá mundo!"
-date: "2019-08-12"
+date: "12/08/2019"
+summary: "Primeiro artigo muito daora"
 ---
 
-Meu primeiro post!
+Meu **primeiro** post!
 
 Imagem: 
 

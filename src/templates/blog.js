@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import './blog-post.scss';
 import Layout from '../components/layout/layout';
 
 export const query = graphql`
@@ -9,6 +10,7 @@ export const query = graphql`
             frontmatter {
                 title
                 date
+                summary
             }
             html
         }
@@ -18,8 +20,11 @@ export const query = graphql`
 const Blog = (props) => {
     return (
         <Layout>
-            <h1>{ props.data.markdownRemark.frontmatter.title }</h1>
-            <p>{ props.data.markdownRemark.frontmatter.date }</p>
+            <section class="blog-post-title">
+                <h1>{ props.data.markdownRemark.frontmatter.title }</h1>
+                <p class="publication-date">{ props.data.markdownRemark.frontmatter.date }</p>
+                <p class="publication-summary">{ props.data.markdownRemark.frontmatter.summary }</p>
+            </section>
             <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></div>
         </Layout>
     );
