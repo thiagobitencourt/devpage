@@ -13,7 +13,8 @@ const IndexPage = () => {
           node {
             frontmatter {
               title,
-              summary
+              summary,
+              post
             }
             fields {
               slug
@@ -24,13 +25,17 @@ const IndexPage = () => {
     }
   `);
 
+  data.allMarkdownRemark.edges.sort((edgeA, edgeB) => {
+    return edgeB.node.frontmatter.post - edgeA.node.frontmatter.post
+  });
+
   return (
     <Layout>
       <SEO title="Blog" />
       <ol className={ blogStyles.posts }>
         {data.allMarkdownRemark.edges.map(edge => {
           return (
-            <li className={ blogStyles.post }>
+            <li key={edge.node.frontmatter.post.toString()} className={ blogStyles.post }>
               <Link to={`/blog/${edge.node.fields.slug}`}>
                 <h2>{edge.node.frontmatter.title}</h2>
                 <p>{edge.node.frontmatter.summary}</p>
