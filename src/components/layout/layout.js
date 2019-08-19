@@ -13,6 +13,7 @@ import "../../styles/index.scss";
 import "../../styles/theme.scss";
 
 import Header from "../header/header";
+import Footer from "../footer/footer";
 import LayoutStyle from "./layout.module.scss";
 
 const Layout = ({ children }) => {
@@ -33,6 +34,7 @@ const Layout = ({ children }) => {
         <main className={ LayoutStyle.content }>
           { children }
         </main>
+        <Footer />
       </div>
     </>
   )

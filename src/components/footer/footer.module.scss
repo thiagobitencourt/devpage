@@ -1,0 +1,19 @@
+@import '../../styles/theme.scss';
+
+.footer {
+    text-align: center;
+    font-style: italic;
+    color: $primary-text-color;
+    font-size: 15px;
+
+    a {
+        font-style: italic;
+        font-weight: bold;
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
