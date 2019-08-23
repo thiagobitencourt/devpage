@@ -1,8 +1,8 @@
 ---
-title: "Conectando aplicação Angular com multiplos backends"
-date: "21/08/2019"
+title: "Conectando aplicação Angular com múltiplos backends"
+date: "23/08/2019"
 post: 3
-summary: "Neste artigo mostro duas formas de configurar uma aplicação Angular para que fique simples mudar o backend ou o destino das requisições HTTP."
+summary: "Neste artigo mostro duas formas de configurar uma aplicação Angular para que fique simples alterar o destino das requisições HTTP."
 ---
 
 Enquanto estamos desenvolvendo uma aplicação Angular é comum precisarmos conectar a múltiplos backends/APIs para fins de testes ou depuração, por exemplo, conectar ao backend de um ambiente de homologação ou até mesmo de produção.
