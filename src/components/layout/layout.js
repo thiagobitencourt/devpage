@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import "../../styles/reset.scss";
 import "../../styles/index.scss";
 import "../../styles/theme.scss";
 
